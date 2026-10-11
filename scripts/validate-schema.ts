@@ -2,9 +2,8 @@
 //
 //   node scripts/validate-schema.ts <data dir> [manifest.json ...]
 //
-// Needs the ajv and ajv-formats packages, which aren't added to package.json until approved
-// (spec section 2: ask before adding a dependency). Until then, install them outside the repo
-// and link node_modules in to run this.
+// Uses ajv and ajv-formats, development-only dependencies approved on 11 October 2026.
+// Run `npm ci` first.
 
 import { readFileSync } from "node:fs";
 import { createRequire } from "node:module";
@@ -18,7 +17,7 @@ try {
   Ajv2020 = require("ajv/dist/2020").default;
   addFormats = require("ajv-formats").default;
 } catch {
-  console.error("ajv and ajv-formats aren't installed. See the note at the top of this file.");
+  console.error("ajv and ajv-formats aren't installed. Run npm ci first.");
   process.exit(2);
 }
 

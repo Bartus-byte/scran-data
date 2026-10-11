@@ -7,11 +7,18 @@
     "node": ">=22.18"
   },
   "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
     "validate-schema": "node scripts/validate-schema.ts examples examples/bundle/manifest.json",
     "validate": "node scripts/validate.ts examples",
     "example-bundle": "node scripts/build-bundle.ts examples examples/bundle --now 2026-10-11T12:00:00Z",
     "golden": "node scripts/golden.ts",
     "bench": "node scripts/bench.ts",
     "test": "node --test test/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.0",
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1",
+    "typescript": "5.9.3"
   }
 }
