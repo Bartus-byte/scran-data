@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bartus-byte.github.io/scran-data/schema/v1/common.schema.json",
+  "title": "Shared definitions",
+  "description": "Types shared by the chain, meal-deal and manifest schemas.",
+  "$defs": {
+    "slug": {
+      "description": "A lower-case identifier made of letters, digits and single hyphens, e.g. \"chicken-club-wrap\".",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "httpsUrl": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "calendarDay": {
+      "description": "A date without a time, YYYY-MM-DD.",
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "region": {
+      "description": "ISO 3166 codes: England, Scotland, Wales, Northern Ireland, Ireland.",
+      "enum": ["GB-ENG", "GB-SCT", "GB-WLS", "GB-NIR", "IE"]
+    },
+    "regions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/region" },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "dietTag": {
+      "description": "Only what the chain's own information states. \"dairy-free\" is a preference tag, never an allergen claim.",
+      "enum": ["vegetarian", "vegan", "halal", "dairy-free"]
+    },
+    "course": {
+      "enum": ["main", "side", "drink", "snack", "dessert"]
+    },
+    "mealSlot": {
+      "enum": ["breakfast", "lunch", "dinner", "snack"]
+    },
+    "reviewStatus": {
+      "description": "\"draft\" until a person has checked every figure against the source. Release bundles contain verified data only.",
+      "enum": ["draft", "verified"]
+    },
+    "grams": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1000
+    },
+    "gramsOrUnpublished": {
+      "description": "Grams, or null when the source doesn't publish this figure.",
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 1000
+    },
+    "kcal": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5000
+    },
+    "gtin": {
+      "description": "A GTIN-8, GTIN-12, GTIN-13 or GTIN-14 barcode. The validator also checks the check digit.",
+      "type": "string",
+      "pattern": "^(?:\\d{8}|\\d{12,14})$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

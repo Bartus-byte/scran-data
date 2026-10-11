@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bartus-byte.github.io/scran-data/schema/v1/manifest.schema.json",
+  "title": "Bundle manifest",
+  "description": "Lists every file in a published data bundle. Published at data/v1/manifest.json; the app checks it at most once a day.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifestVersion", "dataSchemaVersion", "version", "generatedAt", "isRelease", "files"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "manifestVersion": { "const": 1 },
+    "dataSchemaVersion": {
+      "description": "The chain and meal-deal schema version. A breaking change publishes under a new data/vN/ path, so older apps keep reading theirs.",
+      "const": 1
+    },
+    "version": {
+      "description": "Publish time as an integer, YYYYMMDDHHmm in UTC. The app installs a bundle only when this is higher than the one it has.",
+      "type": "integer",
+      "minimum": 202601010000,
+      "maximum": 299912312359
+    },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "isRelease": {
+      "description": "True when the bundle contains verified, non-placeholder data only. The app's release build refuses anything else.",
+      "type": "boolean"
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/file" }
+    }
+  },
+  "$defs": {
+    "file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id", "path", "sha256", "bytes", "contentBytes", "lastChecked"],
+      "properties": {
+        "kind": { "enum": ["chain", "mealDeal"] },
+        "id": { "$ref": "common.schema.json#/$defs/slug" },
+        "path": {
+          "description": "Relative to the manifest. Raw DEFLATE (RFC 1951), which Apple's NSData zlib decompression reads.",
+          "type": "string",
+          "pattern": "^(?:chains|meal-deals)/[a-z0-9]+(?:-[a-z0-9]+)*\\.json\\.deflate$"
+        },
+        "sha256": {
+          "$ref": "common.schema.json#/$defs/sha256",
+          "description": "SHA-256 of the uncompressed JSON. Unchanged content keeps its hash, so the app downloads only what changed."
+        },
+        "bytes": {
+          "description": "Size of the compressed file.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "contentBytes": {
+          "description": "Size of the uncompressed JSON.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "lastChecked": { "$ref": "common.schema.json#/$defs/calendarDay" }
+      }
+    }
+  }
+}

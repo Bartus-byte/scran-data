@@ -1,0 +1,402 @@
+{
+  "$schema": "../../schema/chain.schema.json",
+  "schemaVersion": 1,
+  "id": "corner-express",
+  "name": "Corner Express",
+  "aliases": [
+    "Corner Express",
+    "Corner Express Local"
+  ],
+  "type": "supermarket",
+  "regions": [
+    "GB-ENG",
+    "GB-SCT",
+    "GB-WLS"
+  ],
+  "sourceUrl": "https://example.com/corner-express/nutrition",
+  "allergenInfoUrl": "https://example.com/corner-express/allergens",
+  "lastChecked": "2026-10-07",
+  "isPlaceholder": true,
+  "notes": "Invented development data. Every figure is made up.",
+  "items": [
+    {
+      "id": "chicken-and-bacon-sandwich",
+      "name": "Chicken and bacon sandwich",
+      "course": "main",
+      "kcal": 432,
+      "proteinG": 28,
+      "carbsG": 38,
+      "fatG": 18,
+      "fibreG": 3,
+      "saltG": 1.9,
+      "dietTags": [],
+      "gtins": [
+        "2000000000008"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "egg-mayo-sandwich",
+      "name": "Egg mayo sandwich",
+      "course": "main",
+      "kcal": 350,
+      "proteinG": 15,
+      "carbsG": 35,
+      "fatG": 16,
+      "fibreG": 3,
+      "saltG": 1.1,
+      "dietTags": [
+        "vegetarian"
+      ],
+      "gtins": [
+        "2000000000015"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "chicken-caesar-wrap",
+      "name": "Chicken caesar wrap",
+      "course": "main",
+      "kcal": 448,
+      "proteinG": 26,
+      "carbsG": 40,
+      "fatG": 20,
+      "fibreG": 2,
+      "saltG": 2,
+      "dietTags": [],
+      "gtins": [
+        "2000000000022"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "falafel-houmous-wrap",
+      "name": "Falafel and houmous wrap",
+      "course": "main",
+      "kcal": 421,
+      "proteinG": 11,
+      "carbsG": 52,
+      "fatG": 17,
+      "fibreG": 8,
+      "saltG": 1.6,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "gtins": [
+        "2000000000039"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "chicken-pesto-pasta",
+      "name": "Chicken and pesto pasta pot",
+      "course": "main",
+      "kcal": 455,
+      "proteinG": 24,
+      "carbsG": 45,
+      "fatG": 19,
+      "fibreG": 4,
+      "saltG": 1.5,
+      "dietTags": [],
+      "gtins": [
+        "2000000000046"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "prawn-mayo-sandwich",
+      "name": "Prawn mayo sandwich",
+      "course": "main",
+      "kcal": 345,
+      "proteinG": 17,
+      "carbsG": 34,
+      "fatG": 15,
+      "fibreG": 3,
+      "saltG": 1.3,
+      "dietTags": [],
+      "gtins": [
+        "2000000000053"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "ham-and-cheese-sandwich",
+      "name": "Ham and cheese sandwich",
+      "course": "main",
+      "kcal": 364,
+      "proteinG": 22,
+      "carbsG": 36,
+      "fatG": 14,
+      "fibreG": 3,
+      "saltG": 2.1,
+      "dietTags": [],
+      "gtins": [
+        "2000000000060"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "protein-bar",
+      "name": "Protein bar",
+      "course": "snack",
+      "kcal": 234,
+      "proteinG": 20,
+      "carbsG": 18,
+      "fatG": 8,
+      "fibreG": 5,
+      "saltG": 0.4,
+      "dietTags": [
+        "vegetarian"
+      ],
+      "gtins": [
+        "2000000000077"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "cheese-onion-crisps",
+      "name": "Cheese and onion crisps",
+      "course": "snack",
+      "kcal": 162,
+      "proteinG": 2.5,
+      "carbsG": 16,
+      "fatG": 9.5,
+      "fibreG": 1.2,
+      "saltG": 0.4,
+      "dietTags": [
+        "vegetarian"
+      ],
+      "gtins": [
+        "2000000000084"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "pineapple-pot",
+      "name": "Pineapple pot",
+      "course": "snack",
+      "kcal": 66,
+      "proteinG": 0.5,
+      "carbsG": 15,
+      "fatG": 0.1,
+      "fibreG": 1.4,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "gtins": [
+        "2000000000091"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "egg-protein-pot",
+      "name": "Egg protein pot",
+      "course": "snack",
+      "kcal": 138,
+      "proteinG": 13,
+      "carbsG": 1,
+      "fatG": 9,
+      "fibreG": 0.5,
+      "saltG": 0.5,
+      "dietTags": [
+        "vegetarian"
+      ],
+      "gtins": [
+        "2000000000107"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "chocolate-bar",
+      "name": "Chocolate bar",
+      "course": "snack",
+      "kcal": 241,
+      "proteinG": 3.5,
+      "carbsG": 27,
+      "fatG": 13,
+      "fibreG": 1,
+      "saltG": 0.1,
+      "dietTags": [
+        "vegetarian"
+      ],
+      "gtins": [
+        "2000000000114"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "edamame-beans",
+      "name": "Edamame beans",
+      "course": "snack",
+      "kcal": 129,
+      "proteinG": 11,
+      "carbsG": 7,
+      "fatG": 5,
+      "fibreG": 6,
+      "saltG": 0.3,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "gtins": [
+        "2000000000121"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "still-water",
+      "name": "Still water",
+      "portion": "500 ml",
+      "course": "drink",
+      "kcal": 0,
+      "proteinG": 0,
+      "carbsG": 0,
+      "fatG": 0,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "gtins": [
+        "2000000000138"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "cola-500",
+      "name": "Cola",
+      "portion": "500 ml",
+      "course": "drink",
+      "kcal": 212,
+      "proteinG": 0,
+      "carbsG": 53,
+      "fatG": 0,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "gtins": [
+        "2000000000145"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "diet-cola-500",
+      "name": "Diet cola",
+      "portion": "500 ml",
+      "course": "drink",
+      "kcal": 1,
+      "proteinG": 0,
+      "carbsG": 0,
+      "fatG": 0,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "gtins": [
+        "2000000000152"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "protein-shake",
+      "name": "Chocolate protein shake",
+      "portion": "330 ml",
+      "course": "drink",
+      "kcal": 187,
+      "proteinG": 25,
+      "carbsG": 15,
+      "fatG": 3,
+      "dietTags": [
+        "vegetarian"
+      ],
+      "gtins": [
+        "2000000000169"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "orange-juice-250",
+      "name": "Orange juice",
+      "portion": "250 ml",
+      "course": "drink",
+      "kcal": 95,
+      "proteinG": 1.5,
+      "carbsG": 22,
+      "fatG": 0,
+      "fibreG": 0.5,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "gtins": [
+        "2000000000176"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "iced-latte",
+      "name": "Iced latte",
+      "portion": "250 ml",
+      "course": "drink",
+      "kcal": 124,
+      "proteinG": 7,
+      "carbsG": 15,
+      "fatG": 4,
+      "dietTags": [
+        "vegetarian"
+      ],
+      "gtins": [
+        "2000000000183"
+      ],
+      "sourceUrl": "https://example.com/corner-express/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    }
+  ],
+  "swaps": []
+}

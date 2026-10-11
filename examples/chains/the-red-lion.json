@@ -1,0 +1,308 @@
+{
+  "$schema": "../../schema/chain.schema.json",
+  "schemaVersion": 1,
+  "id": "the-red-lion",
+  "name": "The Red Lion",
+  "aliases": [
+    "The Red Lion",
+    "Red Lion"
+  ],
+  "type": "pub",
+  "regions": [
+    "GB-ENG",
+    "GB-SCT",
+    "GB-WLS"
+  ],
+  "sourceUrl": "https://example.com/the-red-lion/nutrition",
+  "allergenInfoUrl": "https://example.com/the-red-lion/allergens",
+  "lastChecked": "2026-10-07",
+  "isPlaceholder": true,
+  "notes": "Invented development data. Every figure is made up.",
+  "items": [
+    {
+      "id": "fish-and-chips",
+      "name": "Fish and chips",
+      "course": "main",
+      "kcal": 953,
+      "proteinG": 38,
+      "carbsG": 95,
+      "fatG": 45,
+      "fibreG": 8,
+      "saltG": 3.1,
+      "dietTags": [],
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "grilled-chicken-salad",
+      "name": "Grilled chicken with salad",
+      "course": "main",
+      "kcal": 426,
+      "proteinG": 52,
+      "carbsG": 12,
+      "fatG": 18,
+      "fibreG": 4,
+      "saltG": 1.8,
+      "dietTags": [],
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "beef-burger-and-chips",
+      "name": "Beef burger with chips",
+      "course": "main",
+      "kcal": 1054,
+      "proteinG": 45,
+      "carbsG": 98,
+      "fatG": 52,
+      "fibreG": 7,
+      "saltG": 3.4,
+      "dietTags": [],
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "veggie-chilli",
+      "name": "Veggie chilli with rice",
+      "course": "main",
+      "kcal": 594,
+      "proteinG": 18,
+      "carbsG": 92,
+      "fatG": 14,
+      "fibreG": 14,
+      "saltG": 2.2,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "chicken-tikka-masala",
+      "name": "Chicken tikka masala with rice",
+      "course": "main",
+      "kcal": 942,
+      "proteinG": 46,
+      "carbsG": 110,
+      "fatG": 34,
+      "fibreG": 6,
+      "saltG": 3,
+      "dietTags": [],
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "full-breakfast",
+      "name": "Full breakfast",
+      "course": "main",
+      "kcal": 873,
+      "proteinG": 42,
+      "carbsG": 48,
+      "fatG": 55,
+      "fibreG": 9,
+      "saltG": 4.8,
+      "dietTags": [],
+      "availability": {
+        "slots": [
+          "breakfast"
+        ]
+      },
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "chips",
+      "name": "Chips",
+      "course": "side",
+      "kcal": 429,
+      "proteinG": 6,
+      "carbsG": 60,
+      "fatG": 17,
+      "fibreG": 6,
+      "saltG": 0.9,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "side-salad",
+      "name": "Side salad",
+      "course": "side",
+      "kcal": 24,
+      "proteinG": 1.3,
+      "carbsG": 3.5,
+      "fatG": 0.2,
+      "fibreG": 1.6,
+      "saltG": 0.1,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "garlic-bread",
+      "name": "Garlic bread",
+      "course": "side",
+      "kcal": 302,
+      "proteinG": 7,
+      "carbsG": 36,
+      "fatG": 14,
+      "fibreG": 2,
+      "saltG": 1.2,
+      "dietTags": [
+        "vegetarian"
+      ],
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "sticky-toffee-pudding",
+      "name": "Sticky toffee pudding",
+      "course": "dessert",
+      "kcal": 592,
+      "proteinG": 6,
+      "carbsG": 78,
+      "fatG": 28,
+      "fibreG": 2,
+      "saltG": 0.6,
+      "dietTags": [
+        "vegetarian"
+      ],
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "lager-pint",
+      "name": "Lager",
+      "portion": "Pint",
+      "course": "drink",
+      "kcal": 200,
+      "proteinG": 1.7,
+      "carbsG": 17,
+      "fatG": 0,
+      "alcoholG": 17.9,
+      "abvPercent": 4,
+      "volumeMl": 568,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "red-wine-large",
+      "name": "Red wine",
+      "portion": "Large glass, 250 ml",
+      "course": "drink",
+      "kcal": 204,
+      "proteinG": 0.2,
+      "carbsG": 6,
+      "fatG": 0,
+      "alcoholG": 25.6,
+      "abvPercent": 13,
+      "volumeMl": 250,
+      "dietTags": [
+        "vegetarian"
+      ],
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "diet-cola-pint",
+      "name": "Diet cola",
+      "portion": "Pint",
+      "course": "drink",
+      "kcal": 1,
+      "proteinG": 0,
+      "carbsG": 0,
+      "fatG": 0,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "orange-juice",
+      "name": "Orange juice",
+      "portion": "Glass",
+      "course": "drink",
+      "kcal": 84,
+      "proteinG": 1,
+      "carbsG": 20,
+      "fatG": 0,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "house-cocktail",
+      "name": "House cocktail",
+      "course": "drink",
+      "kcal": 210,
+      "proteinG": null,
+      "carbsG": null,
+      "fatG": null,
+      "dietTags": [],
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    }
+  ],
+  "swaps": [
+    {
+      "id": "salad-instead-of-chips",
+      "label": "Salad instead of chips",
+      "delta": {
+        "kcal": -405,
+        "proteinG": -4.7,
+        "carbsG": -56.5,
+        "fatG": -16.8,
+        "fibreG": -4.4,
+        "saltG": -0.8
+      },
+      "appliesTo": [
+        "fish-and-chips",
+        "beef-burger-and-chips"
+      ],
+      "derivedFrom": {
+        "remove": "chips",
+        "add": "side-salad"
+      },
+      "sourceUrl": "https://example.com/the-red-lion/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    }
+  ]
+}

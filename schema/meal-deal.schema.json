@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bartus-byte.github.io/scran-data/schema/v1/meal-deal.schema.json",
+  "title": "Meal deal",
+  "description": "A supermarket meal deal: which items are eligible in each slot. The items and their figures live in the retailer's chain file. One file per deal: data/meal-deals/<id>.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "retailerId",
+    "name",
+    "regions",
+    "slots",
+    "sourceUrl",
+    "lastChecked",
+    "isPlaceholder",
+    "reviewStatus"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "id": {
+      "$ref": "common.schema.json#/$defs/slug",
+      "description": "Matches the file name."
+    },
+    "retailerId": {
+      "$ref": "common.schema.json#/$defs/slug",
+      "description": "The id of a chain file with type \"supermarket\". Every eligible item id refers to an item in it."
+    },
+    "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "regions": { "$ref": "common.schema.json#/$defs/regions" },
+    "slots": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["main", "snack", "drink"],
+      "properties": {
+        "main": { "$ref": "#/$defs/slot" },
+        "snack": { "$ref": "#/$defs/slot" },
+        "drink": { "$ref": "#/$defs/slot" }
+      }
+    },
+    "sourceUrl": { "$ref": "common.schema.json#/$defs/httpsUrl" },
+    "lastChecked": { "$ref": "common.schema.json#/$defs/calendarDay" },
+    "isPlaceholder": { "type": "boolean" },
+    "reviewStatus": { "$ref": "common.schema.json#/$defs/reviewStatus" },
+    "notes": { "type": "string", "maxLength": 500 }
+  },
+  "$defs": {
+    "slot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/slug" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "premium": {
+          "description": "Eligible items that cost extra. Each must also appear in items.",
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/slug" },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

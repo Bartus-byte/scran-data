@@ -1,0 +1,53 @@
+{
+  "$schema": "../../schema/meal-deal.schema.json",
+  "schemaVersion": 1,
+  "id": "corner-express-meal-deal",
+  "retailerId": "corner-express",
+  "name": "Meal Deal",
+  "regions": [
+    "GB-ENG",
+    "GB-SCT",
+    "GB-WLS"
+  ],
+  "slots": {
+    "main": {
+      "items": [
+        "chicken-and-bacon-sandwich",
+        "egg-mayo-sandwich",
+        "chicken-caesar-wrap",
+        "falafel-houmous-wrap",
+        "chicken-pesto-pasta",
+        "prawn-mayo-sandwich",
+        "ham-and-cheese-sandwich"
+      ],
+      "premium": [
+        "chicken-pesto-pasta"
+      ]
+    },
+    "snack": {
+      "items": [
+        "protein-bar",
+        "cheese-onion-crisps",
+        "pineapple-pot",
+        "egg-protein-pot",
+        "chocolate-bar",
+        "edamame-beans"
+      ]
+    },
+    "drink": {
+      "items": [
+        "still-water",
+        "cola-500",
+        "diet-cola-500",
+        "protein-shake",
+        "orange-juice-250",
+        "iced-latte"
+      ]
+    }
+  },
+  "sourceUrl": "https://example.com/corner-express/meal-deal",
+  "lastChecked": "2026-10-07",
+  "isPlaceholder": true,
+  "reviewStatus": "verified",
+  "notes": "Invented development data."
+}

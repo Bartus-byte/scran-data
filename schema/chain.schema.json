@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bartus-byte.github.io/scran-data/schema/v1/chain.schema.json",
+  "title": "Chain",
+  "description": "One chain's menu, with nutrition per item exactly as the chain publishes it. One file per chain: data/chains/<id>.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "aliases",
+    "type",
+    "regions",
+    "sourceUrl",
+    "allergenInfoUrl",
+    "lastChecked",
+    "isPlaceholder",
+    "items"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "id": {
+      "$ref": "common.schema.json#/$defs/slug",
+      "description": "Matches the file name."
+    },
+    "name": {
+      "description": "The chain's name as text. No logos or trademarks are bundled.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "aliases": {
+      "description": "Names MapKit may give this chain's branches, used to match nearby places. Include the plain name.",
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 80 },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "type": { "enum": ["restaurant", "cafe", "pub", "bakery", "supermarket"] },
+    "regions": { "$ref": "common.schema.json#/$defs/regions" },
+    "sourceUrl": {
+      "$ref": "common.schema.json#/$defs/httpsUrl",
+      "description": "The chain's official nutrition page or PDF."
+    },
+    "allergenInfoUrl": {
+      "$ref": "common.schema.json#/$defs/httpsUrl",
+      "description": "The chain's official allergen information. Shown on every chain screen."
+    },
+    "lastChecked": { "$ref": "common.schema.json#/$defs/calendarDay" },
+    "isPlaceholder": {
+      "description": "True only for invented development data. The release build fails if any is bundled.",
+      "type": "boolean"
+    },
+    "notes": { "type": "string", "maxLength": 500 },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/item" }
+    },
+    "swaps": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/swap" }
+    }
+  },
+  "$defs": {
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "course",
+        "kcal",
+        "proteinG",
+        "carbsG",
+        "fatG",
+        "dietTags",
+        "sourceUrl",
+        "lastChecked",
+        "reviewStatus"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/$defs/slug",
+          "description": "Unique within the chain."
+        },
+        "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "portion": {
+          "description": "The size the figures describe, when the menu lists more than one: \"Regular\", \"Large\", \"Pint\".",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "course": { "$ref": "common.schema.json#/$defs/course" },
+        "kcal": { "$ref": "common.schema.json#/$defs/kcal" },
+        "proteinG": { "$ref": "common.schema.json#/$defs/gramsOrUnpublished" },
+        "carbsG": { "$ref": "common.schema.json#/$defs/gramsOrUnpublished" },
+        "fatG": { "$ref": "common.schema.json#/$defs/gramsOrUnpublished" },
+        "fibreG": { "$ref": "common.schema.json#/$defs/grams" },
+        "saltG": { "$ref": "common.schema.json#/$defs/grams" },
+        "alcoholG": {
+          "$ref": "common.schema.json#/$defs/grams",
+          "description": "Grams of alcohol. When the source gives ABV and volume: volumeMl × abvPercent ÷ 100 × 0.789."
+        },
+        "abvPercent": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 80
+        },
+        "volumeMl": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 5000
+        },
+        "dietTags": {
+          "description": "Empty when the chain states none.",
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/dietTag" },
+          "uniqueItems": true
+        },
+        "availability": {
+          "description": "Omit when the item is served all day.",
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "slots": {
+              "description": "The meal windows the item is served in, e.g. [\"breakfast\"].",
+              "type": "array",
+              "items": { "$ref": "common.schema.json#/$defs/mealSlot" },
+              "minItems": 1,
+              "uniqueItems": true
+            },
+            "seasonal": { "type": "boolean" },
+            "note": { "type": "string", "maxLength": 120 }
+          }
+        },
+        "gtins": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/gtin" },
+          "uniqueItems": true
+        },
+        "energyCheckException": {
+          "description": "Why this item's energy doesn't follow the UK label factors (polyols, for example). Skips the energy check; reviewed by hand.",
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 200
+        },
+        "sourceUrl": { "$ref": "common.schema.json#/$defs/httpsUrl" },
+        "lastChecked": { "$ref": "common.schema.json#/$defs/calendarDay" },
+        "reviewStatus": { "$ref": "common.schema.json#/$defs/reviewStatus" },
+        "isPlaceholder": { "type": "boolean" }
+      },
+      "dependentRequired": {
+        "abvPercent": ["volumeMl", "alcoholG"]
+      },
+      "if": {
+        "properties": { "course": { "not": { "const": "drink" } } }
+      },
+      "then": {
+        "description": "Only drinks may leave protein, carbohydrate or fat unpublished.",
+        "properties": {
+          "proteinG": { "type": "number" },
+          "carbsG": { "type": "number" },
+          "fatG": { "type": "number" }
+        }
+      }
+    },
+    "swap": {
+      "description": "A change the customer can ask for that the chain publishes figures for, such as \"No mayo\".",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "delta", "appliesTo", "sourceUrl", "lastChecked", "reviewStatus"],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/slug" },
+        "label": {
+          "description": "Shown on the swap chip: \"No mayo\".",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "delta": {
+          "description": "The change in each figure when the swap is made. Negative saves.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kcal"],
+          "properties": {
+            "kcal": { "type": "number", "minimum": -3000, "maximum": 3000 },
+            "proteinG": { "type": "number", "minimum": -500, "maximum": 500 },
+            "carbsG": { "type": "number", "minimum": -500, "maximum": 500 },
+            "fatG": { "type": "number", "minimum": -500, "maximum": 500 },
+            "fibreG": { "type": "number", "minimum": -100, "maximum": 100 },
+            "saltG": { "type": "number", "minimum": -50, "maximum": 50 }
+          }
+        },
+        "appliesTo": {
+          "description": "Item ids this swap can be made on.",
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/slug" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "derivedFrom": {
+          "description": "When the chain publishes both versions as items, the delta is computed from them: add − remove. The validator checks it.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["remove"],
+          "properties": {
+            "remove": { "$ref": "common.schema.json#/$defs/slug" },
+            "add": { "$ref": "common.schema.json#/$defs/slug" }
+          }
+        },
+        "sourceUrl": { "$ref": "common.schema.json#/$defs/httpsUrl" },
+        "lastChecked": { "$ref": "common.schema.json#/$defs/calendarDay" },
+        "reviewStatus": { "$ref": "common.schema.json#/$defs/reviewStatus" },
+        "isPlaceholder": { "type": "boolean" }
+      }
+    }
+  }
+}

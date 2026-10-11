@@ -1,0 +1,366 @@
+{
+  "$schema": "../../schema/chain.schema.json",
+  "schemaVersion": 1,
+  "id": "bakehouse-and-co",
+  "name": "Bakehouse & Co",
+  "aliases": [
+    "Bakehouse & Co",
+    "Bakehouse and Co",
+    "Bakehouse"
+  ],
+  "type": "bakery",
+  "regions": [
+    "GB-ENG",
+    "GB-SCT",
+    "GB-WLS"
+  ],
+  "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+  "allergenInfoUrl": "https://example.com/bakehouse-and-co/allergens",
+  "lastChecked": "2026-10-07",
+  "isPlaceholder": true,
+  "notes": "Invented development data. Every figure is made up.",
+  "items": [
+    {
+      "id": "sausage-roll",
+      "name": "Sausage roll",
+      "course": "main",
+      "kcal": 353,
+      "proteinG": 12,
+      "carbsG": 26,
+      "fatG": 22,
+      "fibreG": 1.5,
+      "saltG": 1.6,
+      "dietTags": [],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "vegan-sausage-roll",
+      "name": "Vegan sausage roll",
+      "course": "main",
+      "kcal": 322,
+      "proteinG": 11,
+      "carbsG": 25,
+      "fatG": 19,
+      "fibreG": 3.5,
+      "saltG": 1.4,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "chicken-bake",
+      "name": "Chicken bake",
+      "course": "main",
+      "kcal": 452,
+      "proteinG": 21,
+      "carbsG": 37,
+      "fatG": 24,
+      "fibreG": 2,
+      "saltG": 1.9,
+      "dietTags": [],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "chicken-bake-meal",
+      "name": "Chicken bake with wedges",
+      "course": "main",
+      "kcal": 707,
+      "proteinG": 24.5,
+      "carbsG": 71,
+      "fatG": 35,
+      "fibreG": 5,
+      "saltG": 2.6,
+      "dietTags": [],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "cheese-and-onion-bake",
+      "name": "Cheese and onion bake",
+      "course": "main",
+      "kcal": 414,
+      "proteinG": 13,
+      "carbsG": 31,
+      "fatG": 26,
+      "fibreG": 1.8,
+      "saltG": 1.5,
+      "dietTags": [
+        "vegetarian"
+      ],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "chicken-club-baguette",
+      "name": "Chicken club baguette",
+      "course": "main",
+      "kcal": 519,
+      "proteinG": 32,
+      "carbsG": 58,
+      "fatG": 17,
+      "fibreG": 3.2,
+      "saltG": 2.4,
+      "dietTags": [],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "tuna-crunch-baguette",
+      "name": "Tuna crunch baguette",
+      "course": "main",
+      "kcal": 534,
+      "proteinG": 27,
+      "carbsG": 60,
+      "fatG": 20,
+      "fibreG": 3,
+      "saltG": 2.1,
+      "dietTags": [],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "egg-and-bacon-roll",
+      "name": "Egg and bacon roll",
+      "course": "main",
+      "kcal": 319,
+      "proteinG": 21,
+      "carbsG": 31,
+      "fatG": 12,
+      "fibreG": 1.5,
+      "saltG": 2.2,
+      "dietTags": [],
+      "availability": {
+        "slots": [
+          "breakfast"
+        ]
+      },
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "chicken-and-egg-protein-pot",
+      "name": "Chicken and egg protein pot",
+      "course": "snack",
+      "kcal": 174,
+      "proteinG": 20,
+      "carbsG": 3,
+      "fatG": 9,
+      "fibreG": 0.5,
+      "saltG": 0.9,
+      "dietTags": [],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "wedges",
+      "name": "Potato wedges",
+      "course": "side",
+      "kcal": 255,
+      "proteinG": 3.5,
+      "carbsG": 34,
+      "fatG": 11,
+      "fibreG": 3,
+      "saltG": 0.8,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "side-salad",
+      "name": "Side salad",
+      "course": "side",
+      "kcal": 28,
+      "proteinG": 1.5,
+      "carbsG": 4,
+      "fatG": 0.3,
+      "fibreG": 1.5,
+      "saltG": 0.1,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "glazed-doughnut",
+      "name": "Glazed doughnut",
+      "course": "dessert",
+      "kcal": 225,
+      "proteinG": 4,
+      "carbsG": 27,
+      "fatG": 11,
+      "fibreG": 0.8,
+      "saltG": 0.3,
+      "dietTags": [
+        "vegetarian"
+      ],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "black-coffee",
+      "name": "Black coffee",
+      "portion": "Regular",
+      "course": "drink",
+      "kcal": 3,
+      "proteinG": 0.4,
+      "carbsG": 0.1,
+      "fatG": 0.1,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "latte",
+      "name": "Latte",
+      "portion": "Regular",
+      "course": "drink",
+      "kcal": 140,
+      "proteinG": 9.5,
+      "carbsG": 13,
+      "fatG": 5.5,
+      "dietTags": [
+        "vegetarian"
+      ],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "cola-can",
+      "name": "Cola",
+      "portion": "330 ml can",
+      "course": "drink",
+      "kcal": 140,
+      "proteinG": 0,
+      "carbsG": 35,
+      "fatG": 0,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "diet-cola-can",
+      "name": "Diet cola",
+      "portion": "330 ml can",
+      "course": "drink",
+      "kcal": 1,
+      "proteinG": 0,
+      "carbsG": 0,
+      "fatG": 0,
+      "dietTags": [
+        "vegan",
+        "vegetarian",
+        "dairy-free"
+      ],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "pumpkin-spice-latte",
+      "name": "Pumpkin spice latte",
+      "portion": "Regular",
+      "course": "drink",
+      "kcal": 242,
+      "proteinG": 9,
+      "carbsG": 38,
+      "fatG": 6,
+      "dietTags": [
+        "vegetarian"
+      ],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "draft"
+    }
+  ],
+  "swaps": [
+    {
+      "id": "no-mayo",
+      "label": "No mayo",
+      "delta": {
+        "kcal": -110,
+        "proteinG": -0.2,
+        "carbsG": -0.5,
+        "fatG": -12
+      },
+      "appliesTo": [
+        "chicken-club-baguette",
+        "tuna-crunch-baguette"
+      ],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "skimmed-milk",
+      "label": "Skimmed milk",
+      "delta": {
+        "kcal": -40,
+        "fatG": -4.5
+      },
+      "appliesTo": [
+        "latte"
+      ],
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    },
+    {
+      "id": "salad-instead-of-wedges",
+      "label": "Salad instead of wedges",
+      "delta": {
+        "kcal": -227,
+        "proteinG": -2,
+        "carbsG": -30,
+        "fatG": -10.7,
+        "fibreG": -1.5,
+        "saltG": -0.7
+      },
+      "appliesTo": [
+        "chicken-bake-meal"
+      ],
+      "derivedFrom": {
+        "remove": "wedges",
+        "add": "side-salad"
+      },
+      "sourceUrl": "https://example.com/bakehouse-and-co/nutrition",
+      "lastChecked": "2026-10-07",
+      "reviewStatus": "verified"
+    }
+  ]
+}

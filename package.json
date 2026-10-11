@@ -1,0 +1,17 @@
+{
+  "name": "scran-data-pipeline",
+  "private": true,
+  "description": "Validates Scran's nutrition data, builds the app's data bundle and prototypes the ranking formula.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "validate-schema": "node scripts/validate-schema.ts examples examples/bundle/manifest.json",
+    "validate": "node scripts/validate.ts examples",
+    "example-bundle": "node scripts/build-bundle.ts examples examples/bundle --now 2026-10-11T12:00:00Z",
+    "golden": "node scripts/golden.ts",
+    "bench": "node scripts/bench.ts",
+    "test": "node --test test/*.test.ts"
+  }
+}

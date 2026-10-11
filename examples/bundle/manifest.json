@@ -1,0 +1,45 @@
+{
+  "manifestVersion": 1,
+  "dataSchemaVersion": 1,
+  "version": 202610111200,
+  "generatedAt": "2026-10-11T12:00:00Z",
+  "isRelease": false,
+  "files": [
+    {
+      "kind": "chain",
+      "id": "bakehouse-and-co",
+      "path": "chains/bakehouse-and-co.json.deflate",
+      "sha256": "fc105813117026846cd5ea87aabc1c447c2c0a6eeeb56822ee9688288bd5637e",
+      "bytes": 1184,
+      "contentBytes": 6068,
+      "lastChecked": "2026-10-07"
+    },
+    {
+      "kind": "chain",
+      "id": "corner-express",
+      "path": "chains/corner-express.json.deflate",
+      "sha256": "238b010c3bedb9c89cdb91f760dd01b05f9305e5ddfc98024d111970fc8348ff",
+      "bytes": 1106,
+      "contentBytes": 6235,
+      "lastChecked": "2026-10-07"
+    },
+    {
+      "kind": "chain",
+      "id": "the-red-lion",
+      "path": "chains/the-red-lion.json.deflate",
+      "sha256": "6cd86caa5d9039fe0c64ccefa7dbec5fdae4b472fc2662fa56276e87f7164aea",
+      "bytes": 1106,
+      "contentBytes": 5008,
+      "lastChecked": "2026-10-07"
+    },
+    {
+      "kind": "mealDeal",
+      "id": "corner-express-meal-deal",
+      "path": "meal-deals/corner-express-meal-deal.json.deflate",
+      "sha256": "92f655d61725593750b8862001da514d0f4f435c29956d169daa13a8e7ac1667",
+      "bytes": 424,
+      "contentBytes": 767,
+      "lastChecked": "2026-10-07"
+    }
+  ]
+}
