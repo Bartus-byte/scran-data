@@ -1,0 +1,46 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Type-check, schemas, data rules, tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install the development tools
+        run: npm ci --no-audit --no-fund
+
+      - name: Type-check
+        run: npm run typecheck
+
+      - name: Check every file against the schemas
+        run: |
+          node scripts/validate-schema.ts examples examples/bundle/manifest.json
+          node scripts/validate-schema.ts data
+
+      - name: Check the data rules
+        run: |
+          node scripts/validate.ts examples
+          node scripts/validate.ts data --release
+
+      - name: Check the ranking golden vectors are current
+        run: node scripts/golden.ts --check
+
+      - name: Run the tests
+        run: npm test

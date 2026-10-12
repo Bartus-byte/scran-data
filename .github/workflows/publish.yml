@@ -1,0 +1,75 @@
+name: Publish
+
+# Builds the release data bundle and the website from data/, then deploys both to GitHub Pages.
+# Only verified, non-placeholder data is published: the release rules refuse placeholders and
+# the bundle builder leaves drafts out.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build the bundle and the site
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      # No dependency cache on the publishing path: the install takes about a second, and every
+      # package comes straight from npm and is checked against package-lock.json.
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      - name: Install the development tools
+        run: npm ci --no-audit --no-fund
+
+      - name: Type-check and run the tests
+        run: |
+          npm run typecheck
+          npm test
+
+      - name: Check the data with the release rules
+        run: |
+          node scripts/validate-schema.ts data
+          node scripts/validate.ts data --release
+
+      - name: Build the data bundle
+        run: |
+          if ls data/chains/*.json > /dev/null 2>&1; then
+            node scripts/build-bundle.ts data public/data/v1 --release
+          else
+            echo "No chain data yet, so no bundle. Publishing the website only."
+          fi
+
+      - name: Build the website
+        run: node scripts/build-site.ts data public
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: public
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

@@ -1,19 +1,22 @@
 {
-  "name": "scran-data-pipeline",
+  "name": "scran-data",
   "private": true,
-  "description": "Validates Scran's nutrition data, builds the app's data bundle and prototypes the ranking formula.",
+  "description": "Scran's nutrition data: checks it, builds the app's data bundle and the website, and publishes both to GitHub Pages.",
   "type": "module",
   "engines": {
     "node": ">=22.18"
   },
   "scripts": {
     "typecheck": "tsc -p tsconfig.json",
+    "test": "node --test test/*.test.ts",
     "validate-schema": "node scripts/validate-schema.ts examples examples/bundle/manifest.json",
     "validate": "node scripts/validate.ts examples",
+    "validate-data": "node scripts/validate-schema.ts data && node scripts/validate.ts data --release",
+    "bundle": "node scripts/build-bundle.ts data public/data/v1 --release",
+    "site": "node scripts/build-site.ts data public",
     "example-bundle": "node scripts/build-bundle.ts examples examples/bundle --now 2026-10-11T12:00:00Z",
     "golden": "node scripts/golden.ts",
-    "bench": "node scripts/bench.ts",
-    "test": "node --test test/*.test.ts"
+    "bench": "node scripts/bench.ts"
   },
   "devDependencies": {
     "@types/node": "22.18.0",
