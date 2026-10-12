@@ -51,7 +51,15 @@ test("names are escaped", () => {
 
 test("robots.txt points at the sitemap", () => {
   const files = renderSite(examples, { now, style });
-  assert.deepEqual(files.map((file) => file.path).sort(), ["index.html", "robots.txt", "sitemap.xml"]);
+  assert.deepEqual(files.map((file) => file.path).sort(), ["index.html", "privacy/index.html", "robots.txt", "sitemap.xml"]);
   assert.match(files.find((file) => file.path === "robots.txt")?.contents ?? "", /Sitemap: https:\/\/bartus-byte\.github\.io\/scran-data\/sitemap\.xml/);
   assert.match(files.find((file) => file.path === "sitemap.xml")?.contents ?? "", /<lastmod>2026-10-12<\/lastmod>/);
+});
+
+test("the privacy policy is published and in the sitemap", () => {
+  const files = renderSite(examples, { now, style });
+  const privacy = files.find((file) => file.path === "privacy/index.html")?.contents ?? "";
+  assert.match(privacy, /<h1>Privacy policy<\/h1>/);
+  assert.match(privacy, /no analytics and no advertising/);
+  assert.match(files.find((file) => file.path === "sitemap.xml")?.contents ?? "", /scran-data\/privacy\//);
 });
