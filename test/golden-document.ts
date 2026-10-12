@@ -1,6 +1,14 @@
 // Builds the golden-vector document from the scenarios. Shared by scripts/golden.ts and the tests.
 
-import { HIGH_PROTEIN_CONFIG, STANDARD_CONFIG, mealBudget, resolveSlots, type RankResult } from "../src/ranking.ts";
+import {
+  HIGH_PROTEIN_CONFIG,
+  STANDARD_CONFIG,
+  mealBudget,
+  rankChain,
+  rankMealDeal,
+  resolveSlots,
+  type RankResult,
+} from "../src/ranking.ts";
 import {
   budgetCases,
   chainCases,
@@ -12,10 +20,21 @@ import {
   runMealDealCase,
   slotCases,
 } from "./scenarios.ts";
+import {
+  syntheticBudget,
+  syntheticChain,
+  syntheticChainBudgets,
+  syntheticChainSpec,
+  syntheticDealBudgets,
+  syntheticDealSpec,
+  syntheticMealDeal,
+  syntheticProteinG,
+} from "./synthetic.ts";
 
 function summarise(result: RankResult) {
   return {
     nothingFits: result.nothingFits,
+    evaluated: result.evaluated,
     orders: result.orders.map((order) => ({
       key: order.key,
       itemIds: order.itemIds,
@@ -31,6 +50,34 @@ function summarise(result: RankResult) {
   };
 }
 
+/** Full-size cases on the synthetic menus, so the Swift search is checked at the sizes it must be fast at. */
+function syntheticCases() {
+  const chain = syntheticChain(syntheticChainSpec);
+  const { retailer, deal } = syntheticMealDeal(syntheticDealSpec);
+  return {
+    chainSpec: syntheticChainSpec,
+    dealSpec: syntheticDealSpec,
+    proteinG: syntheticProteinG,
+    chains: syntheticChainBudgets.map((kcal) => {
+      const budget = syntheticBudget(kcal, syntheticProteinG);
+      const result = rankChain(chain, { budget, serving: "lunch", dietTags: [], favourites: [], config: STANDARD_CONFIG });
+      return { budgetKcal: kcal, budget, expected: summarise(result) };
+    }),
+    mealDeals: syntheticDealBudgets.map((kcal) => {
+      const budget = syntheticBudget(kcal, syntheticProteinG);
+      const result = rankMealDeal(deal, retailer, {
+        budget,
+        serving: "lunch",
+        dietTags: [],
+        favourites: [],
+        includePremium: true,
+        config: STANDARD_CONFIG,
+      });
+      return { budgetKcal: kcal, budget, expected: summarise(result) };
+    }),
+  };
+}
+
 export function goldenDocument() {
   return {
     formulaVersion: 1,
@@ -42,6 +89,7 @@ export function goldenDocument() {
     mealDeals: mealDealCases.map((c) => ({ ...c, expected: summarise(runMealDealCase(c)) })),
     menus: ["bakehouse-and-co", "the-red-lion"].map((chain) => ({ chain, expected: menuOrder(chain) })),
     plans: planCases(),
+    synthetic: syntheticCases(),
   };
 }
 

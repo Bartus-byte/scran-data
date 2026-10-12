@@ -370,6 +370,7 @@
       "config": "standard",
       "expected": {
         "nothingFits": false,
+        "evaluated": 150,
         "orders": [
           {
             "key": "chicken-club-baguette+latte|no-mayo",
@@ -437,6 +438,7 @@
       "config": "highProtein",
       "expected": {
         "nothingFits": false,
+        "evaluated": 150,
         "orders": [
           {
             "key": "chicken-club-baguette+latte|no-mayo",
@@ -506,6 +508,7 @@
       "config": "standard",
       "expected": {
         "nothingFits": false,
+        "evaluated": 12,
         "orders": [
           {
             "key": "vegan-sausage-roll+wedges",
@@ -545,6 +548,7 @@
       "config": "standard",
       "expected": {
         "nothingFits": false,
+        "evaluated": 150,
         "orders": [
           {
             "key": "chicken-club-baguette+latte|no-mayo",
@@ -609,6 +613,7 @@
       "config": "standard",
       "expected": {
         "nothingFits": true,
+        "evaluated": 0,
         "orders": [
           {
             "key": "vegan-sausage-roll",
@@ -671,6 +676,7 @@
       "config": "standard",
       "expected": {
         "nothingFits": false,
+        "evaluated": 87,
         "orders": [
           {
             "key": "chicken-club-baguette+latte|no-mayo",
@@ -739,6 +745,7 @@
       "config": "standard",
       "expected": {
         "nothingFits": false,
+        "evaluated": 6,
         "orders": [
           {
             "key": "latte|skimmed-milk",
@@ -802,6 +809,7 @@
       "config": "standard",
       "expected": {
         "nothingFits": false,
+        "evaluated": 31,
         "orders": [
           {
             "key": "grilled-chicken-salad",
@@ -868,6 +876,7 @@
       "config": "standard",
       "expected": {
         "nothingFits": false,
+        "evaluated": 6,
         "orders": [
           {
             "key": "veggie-chilli",
@@ -902,6 +911,7 @@
       "config": "standard",
       "expected": {
         "nothingFits": false,
+        "evaluated": 8,
         "orders": [
           {
             "key": "grilled-chicken-salad",
@@ -964,6 +974,7 @@
       "config": "standard",
       "expected": {
         "nothingFits": true,
+        "evaluated": 0,
         "orders": [
           {
             "key": "grilled-chicken-salad",
@@ -1027,6 +1038,7 @@
       "config": "standard",
       "expected": {
         "nothingFits": false,
+        "evaluated": 220,
         "orders": [
           {
             "key": "chicken-and-bacon-sandwich+egg-protein-pot+protein-shake",
@@ -1127,6 +1139,7 @@
       "config": "standard",
       "expected": {
         "nothingFits": false,
+        "evaluated": 193,
         "orders": [
           {
             "key": "chicken-and-bacon-sandwich+egg-protein-pot+protein-shake",
@@ -1229,6 +1242,7 @@
       "config": "standard",
       "expected": {
         "nothingFits": false,
+        "evaluated": 8,
         "orders": [
           {
             "key": "falafel-houmous-wrap+edamame-beans+still-water",
@@ -1265,6 +1279,7 @@
       "config": "standard",
       "expected": {
         "nothingFits": true,
+        "evaluated": 0,
         "orders": [
           {
             "key": "prawn-mayo-sandwich+pineapple-pot+still-water",
@@ -1416,5 +1431,503 @@
         "key": "chicken-club-baguette+latte|no-mayo"
       }
     }
-  ]
+  ],
+  "synthetic": {
+    "chainSpec": {
+      "mains": 50,
+      "sides": 20,
+      "drinks": 40,
+      "swaps": 2,
+      "seed": 42
+    },
+    "dealSpec": {
+      "mains": 60,
+      "drinks": 60,
+      "seed": 42,
+      "snacks": 80,
+      "snackSeed": 7
+    },
+    "proteinG": 45,
+    "chains": [
+      {
+        "budgetKcal": 500,
+        "budget": {
+          "slot": "lunch",
+          "kcal": 500,
+          "proteinG": 45,
+          "idealKcal": 500,
+          "availableKcal": 1428.5714285714287,
+          "availableProteinG": 128.57142857142858
+        },
+        "expected": {
+          "nothingFits": false,
+          "evaluated": 19015,
+          "orders": [
+            {
+              "key": "main-42+drink-9|swap-1",
+              "itemIds": [
+                "main-42",
+                "drink-9"
+              ],
+              "swapIds": [
+                "swap-1"
+              ],
+              "kcal": 298,
+              "proteinG": 48.6,
+              "score": 0.8130761154855642,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 70
+            },
+            {
+              "key": "main-9+side-0|swap-1",
+              "itemIds": [
+                "main-9",
+                "side-0"
+              ],
+              "swapIds": [
+                "swap-1"
+              ],
+              "kcal": 346,
+              "proteinG": 44.7,
+              "score": 0.7924354838709677,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 70
+            },
+            {
+              "key": "main-16+side-6|swap-1",
+              "itemIds": [
+                "main-16",
+                "side-6"
+              ],
+              "swapIds": [
+                "swap-1"
+              ],
+              "kcal": 413,
+              "proteinG": 47.2,
+              "score": 0.7830434782608695,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 70
+            }
+          ]
+        }
+      },
+      {
+        "budgetKcal": 800,
+        "budget": {
+          "slot": "lunch",
+          "kcal": 800,
+          "proteinG": 45,
+          "idealKcal": 800,
+          "availableKcal": 2285.714285714286,
+          "availableProteinG": 128.57142857142858
+        },
+        "expected": {
+          "nothingFits": false,
+          "evaluated": 94834,
+          "orders": [
+            {
+              "key": "main-42+side-3",
+              "itemIds": [
+                "main-42",
+                "side-3"
+              ],
+              "swapIds": [],
+              "kcal": 477,
+              "proteinG": 52.7,
+              "score": 0.7885475179621162,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0
+            },
+            {
+              "key": "main-16+side-6",
+              "itemIds": [
+                "main-16",
+                "side-6"
+              ],
+              "swapIds": [],
+              "kcal": 483,
+              "proteinG": 47.2,
+              "score": 0.7776874562018219,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0
+            },
+            {
+              "key": "main-9+side-6",
+              "itemIds": [
+                "main-9",
+                "side-6"
+              ],
+              "swapIds": [],
+              "kcal": 462,
+              "proteinG": 48.2,
+              "score": 0.7767075736325385,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0
+            }
+          ]
+        }
+      },
+      {
+        "budgetKcal": 1600,
+        "budget": {
+          "slot": "lunch",
+          "kcal": 1600,
+          "proteinG": 45,
+          "idealKcal": 1600,
+          "availableKcal": 4571.428571428572,
+          "availableProteinG": 128.57142857142858
+        },
+        "expected": {
+          "nothingFits": false,
+          "evaluated": 121401,
+          "orders": [
+            {
+              "key": "main-3+side-3+drink-9",
+              "itemIds": [
+                "main-3",
+                "side-3",
+                "drink-9"
+              ],
+              "swapIds": [],
+              "kcal": 963,
+              "proteinG": 67.1,
+              "score": 0.7219956616052061,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0
+            },
+            {
+              "key": "main-44+side-6+drink-26",
+              "itemIds": [
+                "main-44",
+                "side-6",
+                "drink-26"
+              ],
+              "swapIds": [],
+              "kcal": 967,
+              "proteinG": 65.2,
+              "score": 0.7183883751651254,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0
+            },
+            {
+              "key": "main-6+side-11+drink-9",
+              "itemIds": [
+                "main-6",
+                "side-11",
+                "drink-9"
+              ],
+              "swapIds": [],
+              "kcal": 963,
+              "proteinG": 64.2,
+              "score": 0.7171428571428571,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0
+            }
+          ]
+        }
+      }
+    ],
+    "mealDeals": [
+      {
+        "budgetKcal": 500,
+        "budget": {
+          "slot": "lunch",
+          "kcal": 500,
+          "proteinG": 45,
+          "idealKcal": 500,
+          "availableKcal": 1428.5714285714287,
+          "availableProteinG": 128.57142857142858
+        },
+        "expected": {
+          "nothingFits": false,
+          "evaluated": 43957,
+          "orders": [
+            {
+              "key": "main-42+snack-24+drink-51",
+              "itemIds": [
+                "main-42",
+                "snack-24",
+                "drink-51"
+              ],
+              "swapIds": [],
+              "kcal": 311,
+              "proteinG": 47.6,
+              "score": 0.7991923990498813,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0,
+              "premium": false
+            },
+            {
+              "key": "main-9+snack-24+drink-51",
+              "itemIds": [
+                "main-9",
+                "snack-24",
+                "drink-51"
+              ],
+              "swapIds": [],
+              "kcal": 376,
+              "proteinG": 43.800000000000004,
+              "score": 0.7668562300319488,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0,
+              "premium": false
+            },
+            {
+              "key": "main-56+snack-24+drink-51",
+              "itemIds": [
+                "main-56",
+                "snack-24",
+                "drink-51"
+              ],
+              "swapIds": [],
+              "kcal": 479,
+              "proteinG": 48.2,
+              "score": 0.7606237006237007,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0,
+              "premium": false
+            },
+            {
+              "key": "main-16+snack-24+drink-38",
+              "itemIds": [
+                "main-16",
+                "snack-24",
+                "drink-38"
+              ],
+              "swapIds": [],
+              "kcal": 468,
+              "proteinG": 46.900000000000006,
+              "score": 0.7602133712660029,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0,
+              "premium": false
+            },
+            {
+              "key": "main-50+snack-24+drink-19",
+              "itemIds": [
+                "main-50",
+                "snack-24",
+                "drink-19"
+              ],
+              "swapIds": [],
+              "kcal": 453,
+              "proteinG": 44.4,
+              "score": 0.753986577181208,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0,
+              "premium": false
+            }
+          ]
+        }
+      },
+      {
+        "budgetKcal": 800,
+        "budget": {
+          "slot": "lunch",
+          "kcal": 800,
+          "proteinG": 45,
+          "idealKcal": 800,
+          "availableKcal": 2285.714285714286,
+          "availableProteinG": 128.57142857142858
+        },
+        "expected": {
+          "nothingFits": false,
+          "evaluated": 217064,
+          "orders": [
+            {
+              "key": "main-42+snack-27+drink-1",
+              "itemIds": [
+                "main-42",
+                "snack-27",
+                "drink-1"
+              ],
+              "swapIds": [],
+              "kcal": 479,
+              "proteinG": 52.7,
+              "score": 0.768976679712981,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0,
+              "premium": false
+            },
+            {
+              "key": "main-9+snack-68+drink-19",
+              "itemIds": [
+                "main-9",
+                "snack-68",
+                "drink-19"
+              ],
+              "swapIds": [],
+              "kcal": 482,
+              "proteinG": 49.00000000000001,
+              "score": 0.761641586867305,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0,
+              "premium": false
+            },
+            {
+              "key": "main-56+snack-24+drink-51",
+              "itemIds": [
+                "main-56",
+                "snack-24",
+                "drink-51"
+              ],
+              "swapIds": [],
+              "kcal": 479,
+              "proteinG": 48.2,
+              "score": 0.7602070339570339,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0,
+              "premium": false
+            },
+            {
+              "key": "main-16+snack-24+drink-19",
+              "itemIds": [
+                "main-16",
+                "snack-24",
+                "drink-19"
+              ],
+              "swapIds": [],
+              "kcal": 487,
+              "proteinG": 47.800000000000004,
+              "score": 0.758128898128898,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0,
+              "premium": false
+            },
+            {
+              "key": "main-32+snack-24+drink-51",
+              "itemIds": [
+                "main-32",
+                "snack-24",
+                "drink-51"
+              ],
+              "swapIds": [],
+              "kcal": 541,
+              "proteinG": 49.7,
+              "score": 0.751400651465798,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0,
+              "premium": false
+            }
+          ]
+        }
+      },
+      {
+        "budgetKcal": 5000,
+        "budget": {
+          "slot": "lunch",
+          "kcal": 5000,
+          "proteinG": 45,
+          "idealKcal": 5000,
+          "availableKcal": 14285.714285714286,
+          "availableProteinG": 128.57142857142858
+        },
+        "expected": {
+          "nothingFits": false,
+          "evaluated": 288000,
+          "orders": [
+            {
+              "key": "main-42+snack-24+drink-51",
+              "itemIds": [
+                "main-42",
+                "snack-24",
+                "drink-51"
+              ],
+              "swapIds": [],
+              "kcal": 311,
+              "proteinG": 47.6,
+              "score": 0.6199257323832147,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0,
+              "premium": false
+            },
+            {
+              "key": "main-9+snack-24+drink-38",
+              "itemIds": [
+                "main-9",
+                "snack-24",
+                "drink-38"
+              ],
+              "swapIds": [],
+              "kcal": 447,
+              "proteinG": 47.900000000000006,
+              "score": 0.5966327402135232,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0,
+              "premium": false
+            },
+            {
+              "key": "main-56+snack-24+drink-51",
+              "itemIds": [
+                "main-56",
+                "snack-24",
+                "drink-51"
+              ],
+              "swapIds": [],
+              "kcal": 479,
+              "proteinG": 48.2,
+              "score": 0.592557033957034,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0,
+              "premium": false
+            },
+            {
+              "key": "main-16+snack-24+drink-38",
+              "itemIds": [
+                "main-16",
+                "snack-24",
+                "drink-38"
+              ],
+              "swapIds": [],
+              "kcal": 468,
+              "proteinG": 46.900000000000006,
+              "score": 0.5914133712660029,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0,
+              "premium": false
+            },
+            {
+              "key": "main-32+snack-24+drink-38",
+              "itemIds": [
+                "main-32",
+                "snack-24",
+                "drink-38"
+              ],
+              "swapIds": [],
+              "kcal": 612,
+              "proteinG": 53.8,
+              "score": 0.5876483412322273,
+              "fits": true,
+              "overByKcal": 0,
+              "swapSavingKcal": 0,
+              "premium": false
+            }
+          ]
+        }
+      }
+    ]
+  }
 }
