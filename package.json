@@ -16,7 +16,8 @@
     "site": "node scripts/build-site.ts data public",
     "example-bundle": "node scripts/build-bundle.ts examples examples/bundle --now 2026-10-11T12:00:00Z",
     "golden": "node scripts/golden.ts",
-    "bench": "node scripts/bench.ts"
+    "bench": "node scripts/bench.ts",
+    "pdf-extract": "node scripts/pdf-extract.ts"
   },
   "devDependencies": {
     "@types/node": "22.18.0",

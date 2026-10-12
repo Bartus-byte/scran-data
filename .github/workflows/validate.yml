@@ -24,7 +24,12 @@ jobs:
           cache: npm
 
       - name: Install the development tools
-        run: npm ci --no-audit --no-fund
+        run: |
+          npm ci --no-audit --no-fund
+          # pdftotext, for the PDF helper's tests.
+          if ! command -v pdftotext > /dev/null; then
+            sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          fi
 
       - name: Type-check
         run: npm run typecheck

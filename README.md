@@ -21,7 +21,7 @@ The app is in a separate, private repository. Don't rename this repository or th
 | `data/meal-deals/<deal-id>.json` | Which items are eligible in each meal-deal slot |
 | `schema/` | JSON Schemas (draft 2020-12): common, chain, meal deal, manifest |
 | `src/` | Shared code: types, the energy check, the data rules, the bundle builder, the ranking prototype, the website |
-| `scripts/` | Command-line entry points (below) |
+| `scripts/` | Command-line entry points (below), including the PDF helper |
 | `site/` | The website's styles |
 | `examples/` | Invented placeholder data and the bundle built from it, for tests and for the app's development builds |
 | `test/` | `node:test` suites, ranking scenarios and the ranking golden vectors the app's tests match |
@@ -30,7 +30,14 @@ The app is in a separate, private repository. Don't rename this repository or th
 ## Adding or updating a chain
 
 1. Get the chain's official nutrition PDF or page.
-2. Turn it into a draft file in `data/chains/`. The PDF helper does this from a PDF (arriving in Phase 1); otherwise write it by hand against `schema/chain.schema.json`.
+2. Turn it into a draft file in `data/chains/`. From a PDF, the PDF helper does it:
+
+   ```sh
+   npm run pdf-extract -- greggs-nutrition.pdf greggs --name "Greggs" --type bakery \
+     --source-url https://example.com/greggs-nutrition.pdf --allergen-url https://example.com/greggs-allergens
+   ```
+
+   It reads the table (energy in kcal, never kJ; per portion over per 100 g), makes every item a draft with the PDF as its source, guesses each course, and lists everything to check: guessed courses, cells like "<0.1", headings, rows it left out, and the data rules' findings. It never overwrites an existing file without `--force`. Needs poppler's `pdftotext` (`brew install poppler`). Otherwise write the file by hand against `schema/chain.schema.json`.
 3. Check every figure against the source, in GitHub's web editor if you like, and change each checked item to `"verified"`.
 4. Open a pull request. Validation runs on it and lists any problem, such as kcal that don't match the macros.
 5. Merge. Publishing runs on `main`, and the app picks up the change within a day.
@@ -51,8 +58,9 @@ Needs Node 22.18 or later, which runs TypeScript directly, so there's no build s
 | `npm run example-bundle` | Rebuilds `examples/bundle/` with a fixed timestamp |
 | `npm run golden` | Rewrites `test/golden/ranking.json`. Only when the formula or the examples change on purpose |
 | `npm run bench` | Times the ranking on synthetic full-size menus |
+| `npm run pdf-extract -- <pdf> <chain-id> --name … --source-url …` | The PDF helper: a draft chain file from a nutrition PDF |
 
-The development tools (`ajv`, `ajv-formats`, `typescript`, `@types/node`) are pinned in `package-lock.json`. None of them ships in the app.
+The development tools (`ajv`, `ajv-formats`, `typescript`, `@types/node`) are pinned in `package-lock.json`, and the PDF helper runs poppler's `pdftotext`. None of them ships in the app.
 
 ## Publishing
 
